@@ -1,10 +1,78 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Project1</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1 class="logo">Mindful Path Coaching</h1>
+        <ul class="nav-links">
+          <li><a href="#Home">#Home</a></li>
+          <li><a href="About">#About</a></li>
+          <li><a href="Contact">#Contact</a></li>
+        </ul>
+        <button id="modetoggle">⌨️</button>
+      </nav>
+    </header>
+
+    <main id="#home">
+      <section class="hero">
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+            alt="peaceful beach meditation scene"
+          />
+          <figcaption>Find your balance. Reconnect with yourself.</figcaption>
+        </figure>
+      </section>
+
+      <section id="about" class="about">
+        <h2>Welcome to Mindful Path</h2>
+        <p>
+          At Mindful Path Coaching, we help you rediscover clarity, peace, and
+          confidence. Our personalized wellness programs empower you to live
+          with intention and balance. Take the first step toward your
+          healthiest, most mindful self.
+        </p>
+      </section>
+
+      <section id="contact" class="contact">
+        <form id="contactForm">
+          
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message</label>
+          <textarea type="message" id="message" row="4" placeholder="what would you like to focus on?"></textarea>\
+
+          <button type="submit">send</button>
+        </form>
+        <p id="statusMessage"></p>
+      </section>
+
+      <section>
+        <h2>Relaxing Background Music</h2>
+        <audio id="bgMusic" loop>
+            <source src="https://cdn.pixabay.com/download/audio/2022/08/15/audio_06a848ee61.mp3?filename=calm-mind-ambient-11157.mp3" type="audio/mpeg">
+        </audio>
+        <button id="musicbtn">Play Music 🎧</button>
+      </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Mindful Path Coaching — All Rights Reserved</p>
+    </footer>
+  </body>
 </html>
