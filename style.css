@@ -1,0 +1,219 @@
+/* ===========================================
+   🌿 GLOBAL STYLES — Reset and Base Setup
+   =========================================== */
+
+/* Reset default browser margins and paddings,
+   set consistent box-sizing, and use the Poppins font across the site */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Body styles: light background, dark text, and smooth color transitions */
+  body {
+    background-color: #f7fdf8; /* soft greenish-white background */
+    color: #333;               /* dark gray text */
+    line-height: 1.6;          /* adds breathing room between lines */
+    transition: background-color 0.3s, color 0.3s; /* smooth theme toggle */
+  }
+  
+  
+  /* ===========================================
+     🌸 HEADER & NAVIGATION
+     =========================================== */
+  
+  /* Fix header at top, set background color and spacing */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #a8d5ba; /* soft green header */
+    color: #fff;
+    display: flex;        /* horizontal layout */
+    justify-content: space-between; /* space between logo and nav */
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;        /* ensures header stays above other elements */
+  }
+  
+  /* Navigation links styling */
+  nav a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Hover effect for navigation links */
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Push main content down so it’s not hidden behind fixed header */
+  main {
+    padding-top: 100px;
+  }
+  
+  
+  /* ===========================================
+     🌿 HERO SECTION
+     =========================================== */
+  
+  /* Center align hero content */
+  .hero {
+    text-align: center;
+  }
+  
+  /* Style hero image with rounded corners and spacing */
+  .hero img {
+    width: 90%;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  
+  /* ===========================================
+     🌼 SERVICES & CONTACT SECTIONS
+     =========================================== */
+  
+  /* Add padding and center text for key sections */
+  #services, #contact {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  
+  /* ===========================================
+     🧘 AUTHENTICATION SECTION (Sign up / Log in)
+     =========================================== */
+  
+  /* Center the authentication box and give it a soft background */
+  #auth {
+    text-align: center;
+    background-color: #eef8f0;  /* pale green box */
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;           /* keeps box narrow for better focus */
+  }
+  
+  /* Style for the “Member Access” heading */
+  #auth h2 {
+    color: #2f4f2f; /* dark forest green */
+    margin-bottom: 1rem;
+  }
+  
+  /* Arrange form inputs vertically with spacing */
+  #auth form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  /* Common input and button styling */
+  #auth input, #auth button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style for the submit button */
+  #auth button {
+    background-color: #4caf50; /* green button */
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Slightly darker color when hovered */
+  #auth button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Dark mode variation for the auth box */
+  body.dark #auth {
+    background-color: #2c2c2c;
+  }
+  
+  
+  /* ===========================================
+     💌 CONTACT FORM
+     =========================================== */
+  
+  /* Consistent spacing and layout for forms across the site */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
+    margin: 1rem auto;
+  }
+  
+  /* Basic input and button shape */
+  input, button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Global button style (outside auth section) */
+  button {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for all buttons */
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  
+  /* ===========================================
+     🎵 MUSIC PLAYER
+     =========================================== */
+  
+  /* Center music player section and add padding */
+  .music-player {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  
+  /* ===========================================
+     🌻 FOOTER
+     =========================================== */
+  
+  /* Footer with same color as header for consistency */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #a8d5ba;
+    color: white;
+    margin-top: 2rem;
+  }
+  
+  
+  /* ===========================================
+     🌙 DARK MODE STYLING
+     =========================================== */
+  
+  /* Dark background with light text */
+  body.dark {
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+  }
+  
+  /* Darker header and footer in dark mode */
+  body.dark header, 
+  body.dark footer {
+    background: #333;
+  }
+  
+  /* Buttons in dark mode use softer green for visibility */
+  body.dark button {
+    background-color: #6b9b7e;
+  }
+  

@@ -1,78 +1,130 @@
+<!DOCTYPE html>
+<!-- This declares the document type as HTML5 -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini Project1</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <!-- Sets the character encoding to UTF-8 so all symbols and emojis display properly -->
+  <meta charset="UTF-8" />
+  
+  <!-- Makes the website responsive on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Title that appears in the browser tab -->
+  <title>Wellness Coach Landing Page 🌿</title>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <h1 class="logo">Mindful Path Coaching</h1>
-        <ul class="nav-links">
-          <li><a href="#Home">#Home</a></li>
-          <li><a href="About">#About</a></li>
-          <li><a href="Contact">#Contact</a></li>
-        </ul>
-        <button id="modetoggle">⌨️</button>
-      </nav>
-    </header>
+  <!-- Links the external CSS stylesheet for styling -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <main id="#home">
-      <section class="hero">
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-            alt="peaceful beach meditation scene"
-          />
-          <figcaption>Find your balance. Reconnect with yourself.</figcaption>
-        </figure>
-      </section>
+<body>
+  <!-- ===== HEADER SECTION ===== -->
+  <!-- Contains the website title, navigation menu, and theme toggle button -->
+  <header>
+    <h1>Wellness with Isabel 🌸</h1>
+    
+    <!-- Navigation links that scroll to page sections -->
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-      <section id="about" class="about">
-        <h2>Welcome to Mindful Path</h2>
-        <p>
-          At Mindful Path Coaching, we help you rediscover clarity, peace, and
-          confidence. Our personalized wellness programs empower you to live
-          with intention and balance. Take the first step toward your
-          healthiest, most mindful self.
-        </p>
-      </section>
+    <!-- Button to toggle between light and dark theme (handled by JS) -->
+    <button id="theme-toggle">🌞</button>
+  </header>
 
-      <section id="contact" class="contact">
-        <form id="contactForm">
-          
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-          
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
 
-          <label for="message">Message</label>
-          <textarea type="message" id="message" row="4" placeholder="what would you like to focus on?"></textarea>\
+    <!-- === ABOUT SECTION === -->
+    <!-- Hero section with a large image and caption -->
+    <section id="about" class="hero">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" 
+           alt="Peaceful forest path" />
+      <figcaption>Find balance in body, mind, and soul 🌿</figcaption>
+    </section>
 
-          <button type="submit">send</button>
+    <!-- === SERVICES SECTION === -->
+    <!-- Describes the coach's mission and services -->
+    <section id="services">
+      <h2>My Mission</h2>
+      <p>
+        Helping you rediscover your natural state of well-being through mindful coaching,
+        movement, and nutrition guidance.
+      </p>
+    </section>
+
+    <!-- === AUTHENTICATION SECTION === -->
+    <!-- Allows users to sign up, log in, and log out using local storage -->
+    <section id="auth">
+      <h2>Member Access</h2>
+    
+      <!-- Sign-up form for new users -->
+      <div id="signup-section">
+        <h3>Sign Up</h3>
+        <form id="signupForm">
+          <input type="text" id="signupName" placeholder="Full Name" required />
+          <input type="email" id="signupEmail" placeholder="Email" required />
+          <input type="password" id="signupPassword" placeholder="Password" required />
+          <button type="submit">Sign Up</button>
         </form>
-        <p id="statusMessage"></p>
-      </section>
+      </div>
+    
+      <!-- Log-in form (hidden by default until user switches or signs up) -->
+      <div id="login-section" style="display:none;">
+        <h3>Log In</h3>
+        <form id="loginForm">
+          <input type="email" id="loginEmail" placeholder="Email" required />
+          <input type="password" id="loginPassword" placeholder="Password" required />
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+    
+      <!-- Welcome screen displayed when a user is logged in -->
+      <div id="welcome-section" style="display:none;">
+        <h3 id="welcomeMessage"></h3>
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </section>
 
-      <section>
-        <h2>Relaxing Background Music</h2>
-        <audio id="bgMusic" loop>
-            <source src="https://cdn.pixabay.com/download/audio/2022/08/15/audio_06a848ee61.mp3?filename=calm-mind-ambient-11157.mp3" type="audio/mpeg">
-        </audio>
-        <button id="musicbtn">Play Music 🎧</button>
-      </section>
-    </main>
+    <!-- === CONTACT SECTION === -->
+    <!-- Users can send a message or request a free consultation -->
+    <section id="contact">
+      <h2>Book a Free Consultation</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <button type="submit">Send ✉️</button>
+      </form>
 
-    <footer>
-        <p>© 2025 Mindful Path Coaching — All Rights Reserved</p>
-    </footer>
-  </body>
+      <!-- This paragraph updates dynamically after form submission -->
+      <p id="formMessage"></p>
+    </section>
+
+    <!-- === MUSIC PLAYER SECTION === -->
+    <!-- Adds optional relaxing background music for visitors -->
+    <section class="music-player">
+      <h2>Relaxing Background Music</h2>
+
+      <!-- HTML audio element with a looping soundtrack -->
+      <audio id="bgMusic" loop>
+        <source src="assets/Kickboxer Advanced Training remix ( Synthwave ).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <!-- Button to play/pause music (controlled by JavaScript) -->
+      <button id="musicBtn">Play Music 🎧</button>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <!-- Copyright and small closing message -->
+  <footer>
+    <p>© 2025 Wellness with Isabel | Find Your Calm</p>
+  </footer>
+
+  <!-- ===== JAVASCRIPT LINK ===== -->
+  <!-- Connects to the external JS file that adds interactivity -->
+  <script src="script.js"></script>
+</body>
 </html>
